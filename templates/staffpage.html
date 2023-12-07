@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Homepage</title>
+</head>
+
+<body>
+    <h1>Maintenance Requests</h1>
+
+    <br>
+
+    <form method = "POST">
+        <label for = "filter">Filter:</label>
+        <input type = "text" id = "filter" name = "filter">
+        <input type = "submit" value = "Filter">
+        
+        <label for = "aptNum">aptNum:</label>
+        <input type = "radio" id = "aptNum" name = "sortType" value = "0" checked>
+        
+        <label for = "area">area:</label>
+        <input type = "radio" id = "area" name = "sortType" value = "1">
+
+        <label for = "status">status:</label>
+        <input type = "radio" id = "status" name = "sortType" value = "2">
+    </form>
+
+    <br>
+
+    <table>
+        <tr>
+            <th>Id:</th>
+            <th>Apt Num:</th>
+            <th>Area:</th>
+            <th>Desc:</th>
+            <th>Date:</th>
+            <th>Status:</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{item.request_id}}</td>
+            <td>{{item.apartment_number}}</td>
+            <td>{{item.area}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.timestamp}}</td>
+            <td>{{item.status}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+
+    <form method = "POST">
+        <select name = "mReqs" id = "mReqs">
+            {% for item in data %}
+            <option value = {{item.request_id}}>{{item.request_id}}</option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+
+        <input type = "submit" value = "Close this Maintenance Request">
+    </form>
+
+    <br>
+
+    <form action = "{{url_for('homepage')}}">
+        <input type = "submit" value = "Return to Homepage">
+    </form>
+</body>
+
+</html>

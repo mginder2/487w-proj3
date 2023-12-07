@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<body>
+    <h1>Login</h1>
+
+    <br>
+
+    <form action = "{{url_for('tenantrequestpage')}}">
+        <input type = "submit" value = "Submit Request">
+    </form>
+
+    <br>
+
+    <form action = "{{url_for('staffpage')}}">
+        <input type = "submit" value = "Login as Staff">
+    </form>
+
+    <br>
+
+    <form action = "{{url_for('managementpage')}}">
+        <input type = "submit" value = "Login as Management">
+    </form>
+</body>
+
+</html>

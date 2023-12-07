@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Move a Tenant</title>
+</head>
+
+<body>
+    <h1>Move a Tenant</h1><!--header w/ number 1-6-->
+
+    <br>
+
+    <form method = "POST">
+        <label for = "id">Tenant ID:</label>
+        <select name="tenants" id = "tenants">
+            {% for item in data %}
+            <option value = {{item.tenantId}}>{{item.tenantId}}</option>
+            {% endfor %}
+        </select>
+        
+        <br><br>
+
+        <label for = "apartment">New Apartment:</label>
+        <input type = "text" id = "apartmentNum" name = "apartmentNum">
+        
+        <br><br>
+
+        <input type = "submit" value = "Move this Tenant">
+    </form>
+
+    <br>
+
+    <form action = "{{url_for('managementpage')}}">
+        <input type = "submit" value = "Return to Homepage">
+    </form>
+</body>
+
+</html>

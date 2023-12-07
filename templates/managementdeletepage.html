@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete a Tenant</title>
+</head>
+
+<body>
+    <h1>Delete a Tenant</h1><!--header w/ number 1-6-->
+
+    <br>
+
+    <form method = "POST">
+        <label for = "id">Tenant Id:</label>
+        <select name="tenants" id = "tenants">
+            {% for item in data %}
+            <option value = {{item.tenantId}}>{{item.tenantId}}</option>
+            {% endfor %}
+        </select>
+        
+        <br><br>
+
+        <input type = "submit" value = "Delete this Tenant">
+    </form>
+
+    <br>
+
+    <form action = "{{url_for('managementpage')}}">
+        <input type = "submit" value = "Return to Homepage">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request Maintenance</title>
+</head>
+
+<body>
+    <h1>Request Maintenance</h1><!--header w/ number 1-6-->
+
+    <br>
+
+    <form method = "POST">
+        <label for = "aptNum">Apartment Number:</label>
+        <input type = "text" id = "aptNum" name = "aptNum">
+        
+        <br><br>
+        
+        <label for = "problemArea">Area of Problem:</label>
+        <input type = "text" id = "problemArea" name = "problemArea">
+        
+        <br><br>
+
+        <label for = "desc">Description:</label>
+        <input type = "text" id = "desc" name = "desc">
+        
+        <br><br>
+
+        <label for = "image">Image:</label>
+        <input type = "text" id = "image" name = "image">
+
+        <br><br>
+
+        <input type = "submit" value = "Submit Request">
+    </form>
+
+    <br>
+
+    <form action = "{{url_for('homepage')}}">
+        <input type = "submit" value = "Return to Homepage">
+    </form>
+</body>
+
+</html>

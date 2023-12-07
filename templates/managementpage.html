@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maintenance Homepage</title>
+</head>
+
+<body>
+    <h1>Maintenance Homepage</h1>
+
+    <br><!--this is a break statement/new line-->
+
+    <form action = "{{url_for('managementaddpage')}}">
+        <input type = "submit" value = "Add a new Tenant">
+    </form>
+
+    <br>
+
+    <form action = "{{url_for('managementmovepage')}}">
+        <input type = "submit" value = "Move a Tenant">
+    </form>
+
+    <br>
+
+    <form action = "{{url_for('managementdeletepage')}}">
+        <input type = "submit" value = "Delete a Tenant">
+    </form>
+
+    <br>
+    
+    <form action = "{{url_for('homepage')}}">
+        <input type = "submit" value = "Logout">
+    </form>
+</body>
+
+</html>
